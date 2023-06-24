@@ -1,0 +1,24 @@
+import os
+import time
+
+def get_file_info(file_path):
+    try:
+        file_stat = os.stat(file_path)
+        creation_timestamp = file_stat.st_ctime
+        program_used = file_stat.st_birthtime if hasattr(file_stat, 'st_birthtime') else creation_timestamp
+
+        creation_time = time.ctime(creation_timestamp)
+        program_used = time.ctime(program_used)
+
+        print("File Information:")
+        print(f"File Path: {file_path}")
+        print(f"Creation Time: {creation_time}")
+        print(f"Program Used: {program_used}")
+    except FileNotFoundError:
+        print("File not found.")
+
+# Example usage
+file_path = "/home/CrazyCat/Desktop/cat.py"
+get_file_info(file_path)
+ 
+ 
