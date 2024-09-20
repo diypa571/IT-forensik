@@ -18,3 +18,30 @@ INSERT INTO tabell_del3
 SELECT * FROM demotable
 WHERE id > (SELECT MAX(id) FROM demotable) * 2 / 3;
 
+
+
+Dela upp tabellen baserat på antalet rader
+*** LIMIT och OFFSET  *****'
+SELECT COUNT(*) FROM demotable;
+
+CREATE TABLE tabell_del1 LIKE demotable;
+CREATE TABLE tabell_del2 LIKE demotable;
+CREATE TABLE tabell_del3 LIKE demotable;
+
+INSERT INTO tabell_del1
+SELECT * FROM demotable
+LIMIT 30000 OFFSET 0;
+
+INSERT INTO tabell_del2
+SELECT * FROM demotable
+LIMIT 30000 OFFSET 30000;
+
+INSERT INTO tabell_del3
+SELECT * FROM demotable
+LIMIT 30000 OFFSET 60000;
+
+
+
+
+
+
