@@ -1,5 +1,5 @@
 Dela stora db tabeller i små db tabeller, till exempel tre små tabeller
-
+Relevant::::::Säkerhetskopiera först!!!::::::::::
 CREATE TABLE tabell_del1 LIKE demotable;
 CREATE TABLE tabell_del2 LIKE demotable;
 CREATE TABLE tabell_del3 LIKE demotable;
