@@ -1,0 +1,20 @@
+Dela stora db tabeller i små db tabeller, till exempel tre små tabeller
+
+CREATE TABLE tabell_del1 LIKE demotable;
+CREATE TABLE tabell_del2 LIKE demotable;
+CREATE TABLE tabell_del3 LIKE demotable;
+
+Insert, Infoga den första tredjedelen av data i tabell_del1
+INSERT INTO tabell_del1
+SELECT * FROM demotable WHERE id <= (SELECT MAX(id) FROM demotable) / 3;
+ 
+INSERT INTO tabell_del2
+SELECT * FROM demotable
+WHERE id > (SELECT MAX(id) FROM demotable) / 3
+AND id <= (SELECT MAX(id) FROM demotable) * 2 / 3;
+
+ 
+INSERT INTO tabell_del3
+SELECT * FROM demotable
+WHERE id > (SELECT MAX(id) FROM demotable) * 2 / 3;
+
