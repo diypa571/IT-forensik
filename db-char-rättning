@@ -1,0 +1,23 @@
+Återställning av data från gamla Databaser till nya!!!
+
+UPDATE `tabel`
+SET `agare` = REPLACE(`agare`, 'Ã¤', 'ä');
+
+UPDATE `tabel`
+SET `agare` = REPLACE(`agare`, 'Ã¶', 'ö');
+
+UPDATE `tabel`
+SET `agare` = REPLACE(`agare`, 'Ã¥', 'å');
+
+UPDATE `tabel`
+SET `agare` = REPLACE(`agare`, 'Ã©', 'é');
+
+UPDATE `tabel`
+SET `agare` = REPLACE(`agare`, 'Ã–', 'Ö');
+ 
+UPDATE `tabel`
+SET `agare` = REPLACE(`agare`, 'Ã„', 'Ä');
+
+UPDATE `tabel`
+SET `agare` = REPLACE(`agare`, 'Ã…', 'Å');
+ 
